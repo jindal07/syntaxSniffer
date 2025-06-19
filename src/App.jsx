@@ -20,104 +20,60 @@ function App() {
     { value: "swift", label: "Swift" },
     { value: "php", label: "PHP" },
   ];
-
-  // const style = {
-
-  //   control: (base) => ({
-  //     ...base,
-  //     backgroundColor: "#1a1a1a",
-  //     borderColor: "#555",
-  //     color: "white",
-  //   }),
-  //   singleValue: (base) => ({
-  //     ...base,
-  //     color: "white",
-  //   }),
-  //   menu: (base) => ({
-  //     ...base,
-  //     backgroundColor: "#1a1a1a",
-  //     color: "white",
-  //   }),
-  //   option: (base, { isFocused, isSelected }) => ({
-  //     ...base,
-  //     backgroundColor: isSelected ? "#555" : isFocused ? "#333" : "#1a1a1a",
-  //     color: "white",
-  //   }),
-  // };
-
-  // const themes = (theme) => ({
-  //   ...theme,
-  //   colors: {
-  //     ...theme.colors,
-  //     primary25: "#333", // option hover background
-  //     primary: "#555", // selected option background
-  //     neutral0: "#1a1a1a", // control background
-  //     neutral80: "white", // input text color
-  //     neutral20: "#555", // control border
-  //     neutral30: "#888", // border on hover
-  //   },
-  // });
-
-const brainDarkStyles = {
-  control: (base, state) => ({
-    ...base,
-    backgroundColor: '#1e3a8a',
-    borderColor: state.isFocused ? '#702963' : '#3f51b5',
-    borderRadius: '12px',
-    boxShadow: state.isFocused ? '0 0 0 2px #70296388' : 'none',
-    '&:hover': {
-      borderColor: '#702963',
-    },
-    color: '#ffffff',
-  }),
-  menu: (base) => ({
-    ...base,
-    backgroundColor: '#1e3a8a',
-    borderRadius: '12px',
-    boxShadow: '0 10px 20px rgba(0,0,0,0.4)',
-    marginTop: '4px',
-  }),
-  option: (base, state) => ({
-    ...base,
-    backgroundColor: state.isFocused
-      ? '#702963'
-      : state.isSelected
-      ? '#4e2677'
-      : 'transparent',
-    color: '#ffffff',
-    '&:active': {
-      backgroundColor: '#702963',
-    },
-  }),
-  singleValue: (base) => ({
-    ...base,
-    color: '#ffffff',
-  }),
-  input: (base) => ({
-    ...base,
-    color: '#ffffff',
-  }),
-  placeholder: (base) => ({
-    ...base,
-    color: '#cbd5e1',
-  }),
-  dropdownIndicator: (base, state) => ({
-    ...base,
-    color: state.isFocused ? '#F28CB1' : '#ffffff',
-    '&:hover': {
-      color: '#F28CB1',
-    },
-  }),
-  indicatorSeparator: () => ({
-    display: 'none',
-  }),
-};
-
-
-
-
-
-
+  const brainDarkStyles = {
+    control: (base, state) => ({
+      ...base,
+      backgroundColor: "#1e3a8a",
+      borderColor: state.isFocused ? "#702963" : "#3f51b5",
+      borderRadius: "12px",
+      boxShadow: state.isFocused ? "0 0 0 2px #70296388" : "none",
+      "&:hover": {
+        borderColor: "#702963",
+      },
+      color: "#ffffff",
+    }),
+    menu: (base) => ({
+      ...base,
+      backgroundColor: "#1e3a8a",
+      borderRadius: "12px",
+      boxShadow: "0 10px 20px rgba(0,0,0,0.4)",
+      marginTop: "4px",
+    }),
+    option: (base, state) => ({
+      ...base,
+      backgroundColor: state.isFocused
+        ? "#702963"
+        : state.isSelected
+        ? "#4e2677"
+        : "transparent",
+      color: "#ffffff",
+      "&:active": {
+        backgroundColor: "#702963",
+      },
+    }),
+    singleValue: (base) => ({
+      ...base,
+      color: "#ffffff",
+    }),
+    input: (base) => ({
+      ...base,
+      color: "#ffffff",
+    }),
+    placeholder: (base) => ({
+      ...base,
+      color: "#cbd5e1",
+    }),
+    dropdownIndicator: (base, state) => ({
+      ...base,
+      color: state.isFocused ? "#F28CB1" : "#ffffff",
+      "&:hover": {
+        color: "#F28CB1",
+      },
+    }),
+    indicatorSeparator: () => ({
+      display: "none",
+    }),
+  };
 
   const monaco = useMonaco();
 
@@ -190,13 +146,12 @@ Code: ${code}
         <div className="left h-screen w-[45%] ">
           <div className=" tabs w-full flex my-1 justify-between">
             <Select
-              className="cursor-pointer w-50 h-10 shadow-2xl  mx-2 my-2 absolute top-0 left-0 "
+              className="cursor-pointer w-50 h-10 shadow-2xl mx-2 my-2 absolute top-0 left-0 "
               value={selectedOption}
               onChange={(e) => {
                 setSelectedOption(e);
               }}
               options={options}
-               
               styles={brainDarkStyles}
             />
             <div>
@@ -211,14 +166,14 @@ Code: ${code}
                     reviewCode();
                   }
                 }}
-                className="btnNormal transition-all  hover:bg-[radial-gradient(circle_at_30%_30%,_#e6648d,_#6b77e5)] shadow-2xl bg-[radial-gradient(circle_at_30%_30%,_#702963,_#1e3a8a)] px-3 py-2 my-2 mx-2 rounded-md cursor-pointer"
+                className="btnNormal transition-all text-amber-50  hover:bg-[radial-gradient(circle_at_30%_30%,_#e6648d,_#6b77e5)] shadow-2xl bg-[radial-gradient(circle_at_30%_30%,_#702963,_#1e3a8a)] px-3 py-2 my-2 mx-2 rounded-md cursor-pointer"
               >
                 Review
               </button>
             </div>
           </div>
 
-          <div className=" mx-1 rounded-4xl ">
+          <div className=" mx-1 rounded-2xl shadow-2xl">
             <Editor
               theme="brain-dark"
               height="90vh"
@@ -230,11 +185,14 @@ Code: ${code}
             />
           </div>
         </div>
-        <div className="right rounded-2xl p-[10px] bg-[radial-gradient(circle_at_30%_30%,_#e6648d,_#6b77e5)] w-[55%] h-screen overflow-auto my-5 mx-3 flex-wrap scroll-auto">
+        <div className="right rounded-2xl p-3 bg-[radial-gradient(circle_at_30%_30%,_#e6648d,_#6b77e5)] w-[55%] h-screen overflow-auto my-5 mx-3 flex-wrap scroll-auto">
           <div className="topTab border-2 p-2 rounded-2xl border-[#602c6a] shadow-2xl flex items-center justify-between h-[60px] m-2">
             <h1 className="font-[700] text-[25px] ">Response</h1>
           </div>
-          {loading && <CircleLoader color="#602c6a" />}
+          <div className="flex items-center justify-center  m-auto">
+            {loading && <CircleLoader color="#602c6a" />}
+          </div>
+
           <Markdown>{response}</Markdown>
         </div>
       </div>
