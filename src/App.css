@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
 body{
-    background-color: black;
-    color: white; 
+    background: #EEAECA;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     margin: 0%;
     padding: 0%;
     height: 100vh;
     box-sizing: border-box;
+    margin: 10px;
+    color: #F8F9FA;
+    
 }
 
 h4,h3{
+    
     font-weight: bold;
     font-size: large;
     margin: 10px;
@@ -18,10 +22,10 @@ h4,h3{
 p,ol,ul{
     font-size: medium;
     margin: 10px;
-    color: rgb(197, 197, 197);
+    color: rgb(223, 223, 223);
 }
 strong{
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 pre code{
@@ -30,10 +34,11 @@ pre code{
 }
 
 pre{
-    background-color: rgb(167, 167, 167);
-    color: black;
+    background: radial-gradient(circle at 30% 30%, #702963, #1e3a8a);
+    /* color: rgb(204, 204, 204); */
+    color: #F1F5F9;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     
 }
 
