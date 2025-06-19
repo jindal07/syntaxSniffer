@@ -110,9 +110,9 @@ Code: ${code}
               styles={style}
             />
             <div>
-              <button className="btnNormal transition-all hover:bg-zinc-700 bg-zinc-900 px-3 py-2 my-2 mx-2 rounded-md cursor-pointer">
+              {/* <button className="btnNormal transition-all hover:bg-zinc-700 bg-zinc-900 px-3 py-2 my-2 mx-2 rounded-md cursor-pointer">
                 Fix Code
-              </button>
+              </button> */}
               <button
                 onClick={() => {
                   if (code === "") {
