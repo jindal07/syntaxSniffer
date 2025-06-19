@@ -1,23 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1024">
+    <meta name="viewport" content="width=1024" />
     <link rel="icon" href="./src/assets/brain.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SyntaxSniffer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    
-    <div id="root" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></div>
+    <div
+      id="root"
+      style="
+        display: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      "
+    ></div>
     <script>
-  if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    document.body.innerHTML = "<img src='./src/assets/brain.png' alt='logo' style='size: 5px;'><h2 style='text-align:center; padding: 50px;'>This site is not supported on mobile devices.Please use laptop or PC for better experience</h2>";
-  }
-</script>
+      if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        document.body.innerHTML =
+          "<img src='./src/assets/brain.png' alt='logo' style='size: 5px;'><h2 style='text-align:center; padding: 50px;'>This site is not supported on mobile devices.Please use laptop or PC for better experience</h2>";
+      }
+    </script>
 
     <script type="module" src="/src/main.jsx"></script>
   </body>
