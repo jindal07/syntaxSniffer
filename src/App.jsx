@@ -110,8 +110,10 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState("");
 
+  const apiK = import.meta.env.VITE_API_KEY;
+
   const ai = new GoogleGenAI({
-    apiKey: import.meta.env.VITE_API_KEY,
+    apiKey: apiK,
   });
 
   async function reviewCode() {
