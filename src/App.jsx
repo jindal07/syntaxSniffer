@@ -79,28 +79,28 @@ function App() {
 
   useEffect(() => {
     if (monaco) {
-      monaco.editor.defineTheme("brain-dark", {
+      monaco.editor.defineTheme("pinkBlueContrast", {
         base: "vs-dark",
         inherit: true,
         rules: [
-          { token: "", foreground: "E0E0E0", background: "1e3a8a" },
-          { token: "comment", foreground: "7F9CF5", fontStyle: "italic" },
-          { token: "string", foreground: "F28CB1" },
-          { token: "keyword", foreground: "C792EA" },
-          { token: "number", foreground: "F78C6C" },
-          { token: "function", foreground: "82AAFF" },
-          { token: "type", foreground: "FFCB6B" },
+          { token: "", foreground: "FADADD", background: "1E1E2F" },
+          { token: "comment", foreground: "808080" },
+          { token: "keyword", foreground: "C792EA", fontStyle: "bold" },
+          { token: "string", foreground: "A3D8FF" },
+          { token: "function", foreground: "FFD580" },
         ],
         colors: {
-          "editor.background": "#1e3a8a",
-          "editor.foreground": "#E0E0E0",
-          "editorCursor.foreground": "#F28CB1",
-          "editor.lineHighlightBackground": "#70296333",
-          "editorLineNumber.foreground": "#94a3b8",
-          "editor.selectionBackground": "#70296366",
-          "editor.inactiveSelectionBackground": "#70296333",
+          "editor.background": "#1E1E2F",
+          "editor.foreground": "#FADADD",
+          "editorCursor.foreground": "#FFB7C5",
+          "editor.lineHighlightBackground": "#2C2C3A",
+          "editorLineNumber.foreground": "#808080",
+          "editor.selectionBackground": "#44475a",
+          "editor.inactiveSelectionBackground": "#44475a88",
         },
       });
+
+      monaco.editor.setTheme("pinkBlueContrast");
     }
   }, [monaco]);
 
@@ -175,7 +175,8 @@ Code: ${code}
 
           <div className=" mx-1 rounded-2xl shadow-2xl">
             <Editor
-              theme="brain-dark"
+            className="shadow-2xl"
+              theme="pinkBlueContrast"
               height="90vh"
               language={selectedOption.value}
               value={code}
