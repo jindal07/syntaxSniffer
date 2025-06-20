@@ -9,16 +9,16 @@ import CircleLoader from "react-spinners/CircleLoader";
 
 function App() {
   const options = [
-    { value: "javascript", label: "JavaScript" },
-    { value: "python", label: "Python" },
-    { value: "c", label: "C" },
-    { value: "cpp", label: "C++" },
-    { value: "java", label: "Java" },
-    { value: "typescript", label: "TypeScript" },
-    { value: "go", label: "Go" },
-    { value: "ruby", label: "Ruby" },
-    { value: "swift", label: "Swift" },
-    { value: "php", label: "PHP" },
+    { value: "Javascript", label: "JavaScript" },
+    { value: "Python", label: "Python" },
+    { value: "C", label: "C" },
+    { value: "Cpp", label: "C++" },
+    { value: "Java", label: "Java" },
+    { value: "Typescript", label: "TypeScript" },
+    { value: "Go", label: "Go" },
+    { value: "Ruby", label: "Ruby" },
+    { value: "Swift", label: "Swift" },
+    { value: "Php", label: "PHP" },
   ];
   const brainDarkStyles = {
     control: (base, state) => ({
@@ -134,7 +134,6 @@ Analyze it like a senior developer reviewing a pull request.
 Code: ${code}
 `,
     });
-    console.log(response.text);
     setLoading(false);
     setResponse(response.text);
   }
@@ -166,18 +165,23 @@ Code: ${code}
                     reviewCode();
                   }
                 }}
-                className="btnNormal transition-all text-amber-50  hover:bg-[radial-gradient(circle_at_30%_30%,_#e6648d,_#6b77e5)] shadow-2xl bg-[radial-gradient(circle_at_30%_30%,_#702963,_#1e3a8a)] px-3 py-2 my-2 mx-2 rounded-md cursor-pointer"
+                className="btnNormal  text-amber-50  shadow-2xl px-3 py-2 my-2 mx-2 rounded-md cursor-pointer bg-[#1e3a8a] hover:opacity-90 transition"
               >
                 Review
               </button>
             </div>
           </div>
+          <div className="shadow-2xl">
+            <h3 className="border-2 px-2 py-1 shadow-2xl rounded-xl ">
+              Write your {selectedOption.value} code below:
+            </h3>
+          </div>
 
           <div className=" mx-1 rounded-2xl shadow-2xl">
             <Editor
-            className="shadow-2xl"
+              className="shadow-2xl"
               theme="pinkBlueContrast"
-              height="90vh"
+              height="82vh"
               language={selectedOption.value}
               value={code}
               onChange={(e) => {
@@ -186,8 +190,8 @@ Code: ${code}
             />
           </div>
         </div>
-        <div className="right rounded-2xl p-3 bg-[radial-gradient(circle_at_30%_30%,_#e6648d,_#6b77e5)] w-[55%] h-screen overflow-auto my-5 mx-3 flex-wrap scroll-auto">
-          <div className="topTab border-2 p-2 rounded-2xl border-[#602c6a] shadow-2xl flex items-center justify-between h-[60px] m-2">
+        <div className="right rounded-2xl shadow-2xl p-3 bg-[radial-gradient(circle_at_30%_30%,_#e6648d,_#6b77e5)] w-[55%] h-screen overflow-auto my-5 mx-3 flex-wrap scroll-auto">
+          <div className=" topTab opacity-90 sticky top-0 z-10  border-2 p-2 rounded-2xl bg-[radial-gradient(circle_at_30%_30%,_#e6648d,_#6b77e5)] border-[#602c6a] shadow-2xl flex items-center justify-between h-[60px] my-2 mx-0.5">
             <h1 className="font-[700] text-[25px] ">Response</h1>
           </div>
           <div className="flex items-center justify-center  m-auto">
