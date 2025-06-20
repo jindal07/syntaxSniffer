@@ -187,6 +187,11 @@ Code: ${code}
               height="82vh"
               language={selectedOption.value}
               value={code}
+              options={{
+                stickyScroll: {
+                  enabled: false,
+                },
+              }}
               onChange={(e) => {
                 setCode(e);
               }}
