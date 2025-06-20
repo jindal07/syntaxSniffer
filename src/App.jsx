@@ -9,16 +9,16 @@ import CircleLoader from "react-spinners/CircleLoader";
 
 function App() {
   const options = [
-    { value: "Javascript", label: "JavaScript" },
-    { value: "Python", label: "Python" },
-    { value: "C", label: "C" },
-    { value: "Cpp", label: "C++" },
-    { value: "Java", label: "Java" },
-    { value: "Typescript", label: "TypeScript" },
-    { value: "Go", label: "Go" },
-    { value: "Ruby", label: "Ruby" },
-    { value: "Swift", label: "Swift" },
-    { value: "Php", label: "PHP" },
+    { value: "javascript", label: "JavaScript" },
+    { value: "python", label: "Python" },
+    { value: "c", label: "C" },
+    { value: "cpp", label: "C++" },
+    { value: "java", label: "Java" },
+    { value: "typescript", label: "TypeScript" },
+    { value: "go", label: "Go" },
+    { value: "ruby", label: "Ruby" },
+    { value: "swift", label: "Swift" },
+    { value: "php", label: "PHP" },
   ];
   const brainDarkStyles = {
     control: (base, state) => ({
@@ -109,8 +109,9 @@ function App() {
   const [code, setCode] = useState("");
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState("");
+
   const ai = new GoogleGenAI({
-    apiKey: "AIzaSyAX0MaBhC4_sWLI4QiEMuYmPtBtqb9eQtI",
+    apiKey: import.meta.env.VITE_API_KEY,
   });
 
   async function reviewCode() {
